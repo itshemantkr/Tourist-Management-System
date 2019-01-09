@@ -1,0 +1,210 @@
+<html>
+  <head>
+    <style>
+   .container > div {
+    	display: inline-block;
+    	display: -moz-inline-box;
+    	*display: inline; 
+    	zoom: 1;
+   	 	width: 19%;
+    	text-align: center;
+   	}	
+   .mySlides {display:none;}
+   .modal {
+    	display: none; 
+    	position: fixed; 
+    	z-index: 1; 
+    	padding-top: 100px; 
+    	left: 0;
+    	top: 0;
+    	width: 100%; 
+    	height: 100%; 
+    	overflow: auto; 
+   	 	background-color: rgb(0,0,0); 
+    	background-color: rgba(0,0,0,0.4);
+	}
+
+	.modal-content {
+    	background-color: #fefefe;
+    	margin: auto;
+    	padding: 20px;
+    	border: 1px solid #888;
+    	width: 500px;
+	}
+
+	.close {
+    	color: #aaaaaa;
+    	float: right;
+    	font-size: 28px;
+    	font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+    	color: #000;
+    	text-decoration: none;
+    	cursor: pointer;
+	}
+
+   </style>
+  <title>Tourist Management System</title>
+  </head>
+  
+  <body style="display:flex;flex-direction: column;background-color:white;">
+    <div style="height:175px;width:100%;right: 0px; left: 0px;top:0px;position: fixed;">
+    	<img src="logo.jpg" style="height: 150px;width: 279px;border: 1px solid black;">
+    	<img src="http://www.ficci-gitb.com/img/india.jpg" style="height: 150px;width: 81.36%;float: right;border: 1px solid black;">
+    </div>
+    <div class="container" style="width:100%;left: 0px;top:150px;background-color:#212F3C;height: 28px;padding-top: 5px;position: fixed;">
+      <div><button onclick="location.href='project.html'" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">HOME</button></div>
+      <div><button onclick="location.href='wheretogo.html'" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">WHERE TO GO</button></div>
+      <div style="text-decoration: none;color: white;">WELCOME</div>
+      <div><button id="myBtn" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN IN</button></div>
+      <div background-color: #212F3C;><button onclick="location.href='form.html'"style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN UP</button></div>
+    </div>
+    <div style="height:175px;width: 100%;"></div>
+
+    <div style="width: 100%;margin-left: -10px;">
+  	
+  	<img class="mySlides" src="newph.jpg" style="width:101.2%;height:700px;">
+  	<img class="mySlides" src="ph2.jpg" style="width:101.2%;height:700px;">
+  	<img class="mySlides" src="ph3.jpg" style="width:101.2%;height:700px;">
+	
+	</div>
+
+	<div id="myModal" class="modal">
+
+  	<div class="modal-content">
+    <span class="close">&times;</span>
+
+    <p style="color: red;">*Required field</p>
+	<br>
+	<br>
+		<form name="f1">
+		<table width="400px;">
+		<tbody><tr>
+			<tr>
+			<td>Username :   <m style="color:red;">*</m></td>
+			<td><input type="text" name="username" id="username"></td>
+			<tr><td><p></p></td></tr>
+			<tr>
+			<td>Password :   <m style="color:red;">*</m></td>
+			<td><input type="password" name="password"></td>
+			</tr>
+			</tr>
+		</tbody>
+		</table>
+		<br>
+		<button onclick="myFunctionSubmit();" style="margin-left: 200px;" >Submit</button>
+		</form>
+  	</div>
+
+	</div>
+	<script>
+				function myFunctionSubmit() {
+			var x=document.f1.username.value;
+			var y=document.f1.password.value;
+			if(x=="admin"&&y=="admin"|| x=="user"&&y=="user"){
+				alert("You are Logged In");
+
+				document.f1.action.target="_blank";
+				document.f1.action="project2.html";
+			}
+			else{
+				alert("Username/Password Is Incorrect");
+			}
+			
+		}
+
+	</script>
+	<script>
+		var modal = document.getElementById('myModal');
+		var btn = document.getElementById("myBtn");
+		var span = document.getElementsByClassName("close")[0];
+ 
+		btn.onclick = function() {
+		    modal.style.display = "block";
+		}
+
+
+		span.onclick = function() {
+		    modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+    		if (event.target == modal) {
+        		modal.style.display = "none";
+    		}
+		}
+	</script>
+
+
+
+	<script>
+	var myIndex = 0;
+	carousel();
+
+	function carousel() {
+    	var i;
+    	var x = document.getElementsByClassName("mySlides");
+    	for (i = 0; i < x.length; i++) {
+     	  x[i].style.display = "none";  
+    	}
+    
+    	myIndex++;
+    	if (myIndex > x.length) {myIndex = 1}    
+    	x[myIndex-1].style.display = "block";  
+    	setTimeout(carousel, 2000);
+	}
+	
+	</script>
+
+	
+	<br>
+	<h1 align="center">MOST POPULAR DESTINATIONS</h1>
+	<br>	
+	<div style="display:flex;flex-direction:row;">
+
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;<a href="http://himachaltourism.gov.in/"><img src="https://www.tourism-of-india.com/images/himachal-pradesh.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Himachal Pradesh</p>
+		</div>
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://www.keralatourism.org/"><img src="https://www.tourism-of-india.com/images/kerala-des.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Kerala</p>
+		</div>
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="http://www.tourism.rajasthan.gov.in/"><img src="https://www.tourism-of-india.com/images/rajasthan-toi.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Rajasthan</p>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<div style="display:flex;flex-direction:row;">
+
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;<a href="http://www.varanasi.gov.in/en/destination"><img src="https://www.tourism-of-india.com/images/varanasi-toi.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Varanasi</p>
+		</div>
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="http://www.goatourism.gov.in/"><img src="https://www.tourism-of-india.com/images/goa.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Goa</p>
+		</div>
+		<div>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://www.darjeeling-tourism.com/"><img src="https://www.tourism-of-india.com/images/darjeeling-2.jpg" height="270px" width="370px" style="border-radius:30%; border: 5px solid black;"></a></p>
+			<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Darjeeling</p>
+		</div>
+	</div>
+	<div style="background-color: #34495E;color: white;text-align: center;height: 45px;font-size: 18px;margin-left: -10px;margin-right: -10px;">
+          
+          <p>About Us | Terms and Conditions | Good to know | Sitemap Blog | Inquiry Now</p>      
+    </div>
+    <div style="background-color: #212F3D;color: white;text-align: center;height: 45px;font-size: 18px;margin-left: -10px;margin-right: -10px;">
+    	<p>Follow Us:&nbsp&nbsp       
+		<img src="https://tse4.mm.bing.net/th?id=OIP.xR6SOfpfSk8GNp0k6yNfhgHaHa&pid=15.1&P=0&w=300&h=300" height=20px width="20px">&nbsp&nbsp
+  		<img src="https://www.laneterralever.com/wp-content/uploads/2017/02/twitter-logo.jpg" height=20px width="20px"> </p>
+    </div>
+
+  </body>
+</html>

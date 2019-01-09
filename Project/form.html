@@ -1,0 +1,185 @@
+<html><head><style>
+.container > div {
+    	display: inline-block;
+    	display: -moz-inline-box;
+    	*display: inline; 
+    	zoom: 1;
+   	 	width: 19%;
+    	text-align: center;
+   	}
+
+body{
+border:2px solid black;
+padding :20px;
+background-color:#ffe6b3;
+}
+td{
+padding:20px;
+width:150px;
+}
+
+d{
+color:red;
+}
+
+
+input
+{
+border:1px solid black;
+border-radius: 5px;
+height:25px;
+}
+</style>
+<script>
+function myFunction() {
+    var x=document.f1.name.value;
+	if(x==null || x=="")
+	{
+		alert("Please Enter Your Name.");
+	}
+  var y=document.f1.username.value;
+if(y==null || y=="")
+	{
+		alert("Please Enter Your Username.");
+	}
+  
+var firstpassword=document.f1.password.value;  
+var secondpassword=document.f1.password2.value;  
+ 
+if(firstpassword==null || firstpassword=="")
+{
+	alert("Please enter password");
+} 
+if(secondpassword==null || secondpassword=="")
+{
+	alert("Please again enter password to confirm");
+} 
+if((firstpassword!= null)&&(firstpassword.length<6))
+{
+alert("password too short!!");
+}
+if(firstpassword!=secondpassword)
+{  
+alert("password must be same!!");    
+}  
+  
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(f1.mail.value))  
+  {  
+    return true;
+  }  
+else{
+    alert("You have entered an invalid email address!")  ;
+    }
+var firstmail=document.f1.mail.value;  
+var secondmail=document.f1.mail2.value;  
+  
+if(firstmail!=secondmail)
+{  
+alert("email is not same!!");    
+}  
+
+}
+
+   function Captcha(){
+                     var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+                     var i;
+                     for (i=0;i<6;i++){
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                       var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      }
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+                    document.getElementById("mainCaptcha").value = code
+                  }
+ function ValidCaptcha(){
+                      var string1 = removeSpaces(document.f1.captcha.value);
+                      var string2 = removeSpaces(document.f1.txtInput.value);
+                      if (string1 == string2){
+                        return true;
+                      }
+                      else{        
+                        alert("NOT MATCHED");
+                      }
+                  }
+                  function removeSpaces(string){
+                    return string.split(' ').join('');
+                  }  
+</script>
+
+
+</head><body onload="Captcha();">
+
+	<div style="height:175px;width:100%;right: 0px; left: 0px;top:0px;position: fixed;">
+    	<img src="logo.jpg" style="height: 150px;width: 281px;">
+    	<img src="http://www.ficci-gitb.com/img/india.jpg" style="height: 150px;width: 81.5%;float: right;">
+    </div>
+    <div class="container" style="width:100%;left: 0px;top:150px;background-color:#212F3C;height: 35px;padding-top: 5px;position: fixed;">
+      <div><button onclick="location.href='project.html'" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">HOME</button></div>
+      <div><a href="" style="text-decoration: none;color: white;">WHERE TO GO</a></div>
+      <div style="text-decoration: none;color: white;">WELCOME</div>
+      <div><button id="myBtn" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN IN</button></div>
+      <div background-color: #212F3C;><button style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN UP</button></div>
+    </div>
+    <div style="height:175px;width: 100%;"></div>
+
+<form name="f1">
+<fieldset>
+<legend><b> User Registration</b></legend>
+<br><br>
+	<d>*</d><b>Required field</b>
+	<br>
+	<br>
+<table width="50%">
+	<tbody><tr>
+	<td>Name:   <d>*</d></td>
+	<td><input type="text" name="name" id="name"></td>
+	</tr>
+	<tr>
+	<td>Username :   <d>*</d></td>
+	<td><input type="text" name="username" id="username"></td>
+	</tr>
+	<tr>
+	<td>Password :   <d>*</d></td>
+	<td><input type="password" name="password"></td>
+	</tr>
+	<tr>
+	<td>Confirm Password :   <d>*</d></td>
+	<td><input type="password" name="password2"></td>
+	</tr>
+	<tr>
+	<td>Email Address :   <d>*</d></td>
+	<td><input type="text" name="mail" id="mail"></td>
+	</tr>
+	<tr>
+	<td>Confirm email-address :   <d>*</d></td>
+	<td><input type="text" name="mail2"></td>
+	</tr>
+   	<tr>
+	
+        <td>Captcha:     <d>*</d></td>
+	<td><input type="text" name="captcha" id="mainCaptcha" style="background-image:url(menu_bg.jpg); text-align:center; border:none;
+            font-weight:bold; font-family:Modern"></td>
+	<td><input type="button" id="refresh" value="Refresh" onclick="Captcha();"></td>  
+	
+	</tr>
+	<tr>
+	<td>                 </td>
+           <td>
+            <input type="text" name="txtInput" id="txtInput">    
+          </td>
+	 <td>
+            <input id="Button1" type="button" value="Check" onclick="ValidCaptcha();">
+          </td>
+         </tr>
+	<tr>
+	<td><input type="submit" onclick="myFunction();" value="submit"></td>
+	</tr>
+
+
+
+
+</tbody></table></fieldset></form></body></html>

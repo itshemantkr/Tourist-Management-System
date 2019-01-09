@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <style>
+   .container > div {
+    	display: inline-block;
+    	display: -moz-inline-box;
+    	*display: inline; 
+    	zoom: 1;
+   	 	width: 19%;
+    	text-align: center;
+   	}	
+   .mySlides {display:none;}
+   input
+  {
+    border:1px solid black;
+    border-radius: 5px;
+    height:25px;
+  }
+
+   </style>
+  
+  </head>
+  
+  <body style="display:flex;flex-direction: column;background-color:#ffe6b3;">
+    <div style="height:175px;width:100%;right: 0px; left: 0px;top:0px;position: fixed;">
+      <img src="logo.jpg" style="height: 150px;width: 281px;">
+      <img src="http://www.ficci-gitb.com/img/india.jpg" style="height: 150px;width: 81.5%;float: right;">
+    </div>
+    <div class="container" style="width:100%;left: 0px;top:150px;background-color:#212F3C;height: 35px;padding-top: 5px;position: fixed;">
+      <div><button onclick="location.href='project.html'" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">HOME</button></div>
+      <div><button onclick=""location.href='wheretogo.html'"" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">WHERE TO GO</button></div>
+      <div style="text-decoration: none;color: white;">WELCOME</div>
+      <div><button id="myBtn" style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN IN</button></div>
+      <div background-color: #212F3C;><button onclick="location.href='form.html'"style="border:none;color:white;text-decoration: none;background-color: #212F3C;">SIGN UP</button></div>
+    </div>
+    <div style="height: 200px;"></div>
+    <form name="f1">
+<fieldset>
+<legend> Search Where You Wanna GO</legend>
+<br><br>
+  <br>
+  <br>
+<table width="50%">
+  <tbody><tr>
+  <td>Enter State : <d>*</d></td>
+  <td><input type="text" name="name" id="name"></td>
+  </tr>
+  
+</tbody></table></fieldset></form>
+<button  style="margin-left: 400px; height: 20px;width: 60px; "onclick="submit()">Submit</button>
+  <p id="demo"></p>
+  <script >
+    function submit() {
+    var x=document.f1.name.value;
+    if(x=="gujarat")
+    {
+        document.getElementById("demo").innerHTML = "Ahmedabad Old City <br> Sun Temple, Modhera<br> Kutch Region<br> Dwarka<br> Marine National Park <br> Somnath";
+    }
+  if(x=="rajasthan"){
+        document.getElementById("demo").innerHTML = "Armer Fort<br>Hawa Mahal<br>Jaisalmer<br>Jodhpur – The Blue City<br>Pushkar<br>Kuchaman City<br>Jaipur-Pink City";
+    }
+    if(x=="kerala"){
+      document.getElementById("demo").innerHTML = " Alleppey – The backwater hot spot<br>Munnar <br>Kumarakom – One of most tranquil places to visit in Kerala<br>Wayanad – The land of heavenly trails<br>Thekkady – For the love of wildlife";
+    }
+    if(x=="delhi"){
+      document.getElementById("demo").innerHTML = " The grand ‘Red Fort’<br>The glorious ‘India Gate’<br>The architectural beauty called ‘Rashtrapati Bhawan’<br>The mysterious ruins of ‘Qutub Minar’<br>The equinoctial sundial called ‘Jantar Mantar’<br>The first garden-tomb of the Indian subcontinent: ‘Humayun’s Tomb’";
+    }
+  }
+  </script>
+   </body>
+   </html>
